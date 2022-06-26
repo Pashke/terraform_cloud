@@ -22,10 +22,6 @@ resource "yandex_compute_instance" "node_foreach" {
     nat       = true
   }
 
-  metadata = {
-    ssh-keys = "centos:${file("~/.ssh/id_rsa.pub")}"
-  }
-
   lifecycle {
     create_before_destroy = true
   }
