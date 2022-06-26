@@ -1,6 +1,6 @@
 resource "yandex_compute_instance" "node_foreach" {
-  for_each                  = var.nodes[terraform.workspace]
-  name                      = "${each.key}-${terraform.workspace}"
+  for_each                  = var.nodes["stage"]
+  name                      = "${each.key}"
   zone                      = "ru-central1-a"
   allow_stopping_for_update = true
 
