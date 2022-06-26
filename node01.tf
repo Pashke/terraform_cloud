@@ -1,5 +1,5 @@
 resource "yandex_compute_instance" "node01" {
-  name                      = "node01"
+  name                      = "node02"
   zone                      = "ru-central1-a"
   allow_stopping_for_update = true
 
