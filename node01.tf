@@ -1,18 +1,17 @@
-resource "yandex_compute_instance" "node_foreach" {
-  for_each                  = var.nodes["stage"]
-  name                      = "${each.key}"
+resource "yandex_compute_instance" "node01" {
+  name                      = "node01"
   zone                      = "ru-central1-a"
   allow_stopping_for_update = true
 
   resources {
-    cores  = each.value.cores
-    memory = each.value.memory
+    cores  = 2
+    memory = 4
   }
 
   boot_disk {
     initialize_params {
       image_id = "${var.centos-7-base}"
-      type     = each.value.type_disk
+      type     = "network-nvme"
       size     = "50"
     }
   }

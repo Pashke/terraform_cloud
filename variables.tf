@@ -10,30 +10,7 @@ variable "centos-7-base" {
   default = "fd8hqa9gq1d59afqonsf"
 }
 
-variable "nodes" {
-  default = {
-    prod = {
-      node01 = {
-        cores = 4
-        memory = 4
-        type_disk = "network-nvme"
-      }
-      node02 = {
-        cores = 4
-        memory = 4
-        type_disk = "network-nvme"
-      }
-    }
-    stage = {
-      node01 = {
-        cores = 2
-        memory = 4
-        type_disk = "network-hdd"
-      }
-    }
-  }
-}
-
 variable "token" {
-  default = ""
+  type = string
+  sensitive = true
 }
