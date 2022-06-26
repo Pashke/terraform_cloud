@@ -35,5 +35,5 @@ variable "nodes" {
 }
 
 variable "token" {
-  type = string
+  default = ""
 }
